@@ -13,10 +13,30 @@ function formatDate(timestamp){
     return `${day} | ${hours}:${minutes}`;
 }
 
+function formatDay(timestamp){
+    let date = new Date(timestamp * 1000);
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    let day = days[date.getDay()];
+    return day;
+}
+
+function getForecast(coordinates){
+    let apiKey = "8t33e4c238ca15f8a077046of20eb747";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lat=${coordinates.latitude}&lon=${coordinates.longitude}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(showForecast)
+}
+
 function showTemp(result){
     let city =  document.querySelector('.city')
     city.innerHTML = result.data.city
-
 
     celElement = result.data.temperature.current;
 
@@ -44,6 +64,8 @@ function showTemp(result){
     let icon_url =
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${icon}.png`;
     img_icon.setAttribute('src', icon_url);
+
+    getForecast(result.data.coordinates)
 }
 
 function searchIt(city){
@@ -88,3 +110,36 @@ function convert_Cel(event) {
 
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convert_Cel);
+
+
+function showForecast(result) {
+    let daily_forecast = result.data.daily
+    let forecastEl = document.querySelector("#forecast");
+    let forecastHtml = `<section class="row">`;
+    daily_forecast.forEach(function (forecastDay, index){
+
+    if (index < 6){
+    forecastHtml += `
+        <div class="col-2">
+            <div class="weather-forecast-date">
+                ${formatDay(forecastDay.time)}
+            </div>
+            <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+                forecastDay.condition.icon
+            }.png" alt=""
+            width="46"/>
+            <div class="weather-forecast-temp">
+                <span class="weather-max">
+                    ${Math.round(forecastDay.temperature.maximum)}° 
+                </span>
+                | 
+                <span class="weather-min">
+                    ${Math.round(forecastDay.temperature.minimum)}°
+                </span>
+            </div>
+        </div>`;
+        }
+    });
+    forecastHtml = forecastHtml + `</section>`
+    forecastEl.innerHTML = forecastHtml;
+}

@@ -1,6 +1,9 @@
 body {
     font-family: 'Roboto Condensed', sans-serif;
+    background-color: rgb(37, 37, 37);
+    background: radial-gradient(circle at -8.9% 51.2%, rgb(0, 149, 255) 0%, rgb(136, 0, 255) 15.9%, rgb(228, 77, 255) 15.9%, rgb(255, 77, 213) 24.4%, rgb(19, 30, 37) 24.5%, rgb(19, 30, 37) 66%);
 }
+
 .weather-app-wrapper {
     max-width: 600px;
     margin: 30px auto;
@@ -11,7 +14,39 @@ body {
     padding: 20px;
     border: 1px solid gray;
     border-radius: 10px;
+
+    --border-size: 3px;
+    --border-angle: 0turn;
+    width: 60vmin;
+    height: 50vmin;
+    background-image: conic-gradient(from var(--border-angle),
+            rgb(246, 237, 255),
+            rgb(235, 235, 255) 50%,
+            rgb(247, 240, 255)),
+        conic-gradient(from var(--border-angle), transparent 20%, #08f, #f03);
+    background-size: calc(100% - (var(--border-size) * 2)) calc(100% - (var(--border-size) * 3)),
+        cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    animation: bg-spin 3s linear infinite;
+
+    @keyframes bg-spin {
+        to {
+            --border-angle: 1turn;
+        }
+    }
 }
+        .weather-app:hover {
+            animation-play-state: paused;
+        }
+        
+@property --border-angle {
+    syntax: "<angle>";
+    inherits: true;
+    initial-value: 0turn;
+}
+
 h1{
     color: rgb(135,135,135);
     font-size: 24px;
@@ -66,4 +101,27 @@ a{
 
 .weather-temp .active:hover {
     text-decoration: underline;
+}
+.weather-forecast {
+    margin-top: 20px;
+    text-align: center;
+}
+.weather-forecast-date{
+    font-size: 17px;
+    color: #8b8b8b;
+}
+
+.weather-min {
+    color: #949494;
+}
+.footer a{
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+.header h1{
+    text-align:center;
+    margin-top: 60px;
+    font-size: 40px;
+    color: white;
 }
