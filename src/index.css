@@ -112,7 +112,7 @@ body{
 }
 .weather-app #three_col .row #humidity{
     padding: 15px 10px 5px 10px;
-    background-color: #1a395f7a;
+    background-color: #bdbdbd7a;
     border: 1px solid rgb(252, 252, 252);
     border-radius: 7px;
 }
@@ -122,16 +122,16 @@ body{
     color:  rgb(255, 255, 255);
     font-size: 1.5em;
 }
-.weather-app #three_col .row #wind .wind_val,
-.weather-app #three_col .row #uv .uv_val,
+.weather-app #three_col .row #uv .wind_val,
+.weather-app #three_col .row #wind .pressure_val,
 .weather-app #three_col .row #humidity .hum_val {
     font-size: 35px;
     font-weight: bold;
     margin: 0;
     margin-top: 10px;
 }
-.weather-app #three_col .row #wind .wind_lab,
-.weather-app #three_col .row #uv .uv_lab,
+.weather-app #three_col .row #uv .wind_lab,
+.weather-app #three_col .row #wind .pressure_lab,
 .weather-app #three_col .row #humidity .hum_lab{
     font-size: 16px;
     opacity: 0.6;

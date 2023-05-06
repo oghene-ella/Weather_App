@@ -28,15 +28,14 @@
             <!-- weather temp & time-->
             <section class="row" id="content">
                 <span class="weather_status">
-                    <p class="temp">11°C</p>
-                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-night.png"/>
+                    <p class="temp"></p>
+                    <img src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/mist-night.png" id="icon"/>
                 </span>
                 <span class="time_status">
                     <p class="location">
-                        Ibadan, Nigeria
+                        
                     </p>
                     <p class="the_date">
-                        1 May, 2023 | 13:06
                     </p>
                 </span>
             </section>
@@ -47,8 +46,7 @@
                     <i class="bi bi-geo-alt" style="color:white"></i>
                     <i class="bi bi-geo-alt"></i>
                 </span>
-                <input type="text" class="form-control" placeholder="Search Location..." aria-label="Recipient's username"
-                    aria-describedby="button-addon2">
+                <input type="text" class="form-control" id="city_search" placeholder="Search Location...">
                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
             </section>
 
@@ -57,109 +55,24 @@
                 <div class="row align-items-start">
                     <div class="col" id="wind">
                         <i class="bi bi-wind"></i>
-                        <p class="wind_val">10 m/s</p>
-                        <p class="wind_lab">Wind Speed</p>
+                        <p class="pressure_val"></p>
+                        <p class="pressure_lab">Pressure</p>
                     </div>
                     <div class="col" id="uv">
                         <i class="bi bi-brightness-high"></i>
-                        <p class="uv_val">720 hpa</p>
-                        <p class="uv_lab">UV Index</p>
+                        <p class="wind_val"></p>
+                        <p class="wind_lab">Wind Speed</p>
                     </div>
                     <div class="col" id="humidity">
                         <i class="bi bi-moisture"></i>
-                        <p class="hum_val">98%</p>
+                        <p class="hum_val"></p>
                         <p class="hum_lab">Humidity</p>
                     </div>
                 </div>
             </section>
 
             <!-- weather forecast -->
-            <section class="row" id="forecast">
-                <div class="col-2" id="items">
-                    <div class="weather-forecast-date">
-                        Tomorrow
-                    </div>
-                    <hr>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt=""/>
-                    <div class="weather-forecast-temp">
-                        <!-- <span class="weather-max">
-                            1°
-                        </span>
-                        | -->
-                        <span class="weather-min">
-                            9°C
-                        </span>
-                    </div>
-                </div>
-
-                <div class="col-2" id="items">
-                    <div class="weather-forecast-date">
-                        Tomorrow
-                    </div>
-                    <hr>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="46" />
-                    <div class="weather-forecast-temp">
-                        <!-- <span class="weather-max">
-                            1°
-                        </span>
-                        | -->
-                        <span class="weather-min">
-                            9°C
-                        </span>
-                    </div>
-                </div>
-
-                <div class="col-2" id="items">
-                    <div class="weather-forecast-date">
-                        Tomorrow
-                    </div>
-                    <hr>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="46" />
-                    <div class="weather-forecast-temp">
-                        <!-- <span class="weather-max">
-                            1°
-                        </span>
-                        | -->
-                        <span class="weather-min">
-                            9°C
-                        </span>
-                    </div>
-                </div>
-
-                <div class="col-2" id="items">
-                    <div class="weather-forecast-date">
-                        Tomorrow
-                    </div>
-                    <hr>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="46" />
-                    <div class="weather-forecast-temp">
-                        <!-- <span class="weather-max">
-                            1°
-                        </span>
-                        | -->
-                        <span class="weather-min">
-                            9°C
-                        </span>
-                    </div>
-                </div>
-
-                <div class="col-2" id="items">
-                    <div class="weather-forecast-date">
-                        Tomorrow
-                    </div>
-                    <hr>
-                    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/scattered-clouds-day.png" alt="" width="46" />
-                    <div class="weather-forecast-temp">
-                        <!-- <span class="weather-max">
-                            1°
-                        </span>
-                        | -->
-                        <span class="weather-min">
-                            9°C
-                        </span>
-                    </div>
-                </div>
-            </section>
+            <section id="forecast"></section>
         </section>
     </section>
     <script src="./src/index.js"></script>
