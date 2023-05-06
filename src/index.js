@@ -31,8 +31,6 @@ function formatDate(timestamp) {
 
 // show most results
 function showTopResults(result) {
-  // temperature
-//   console.log(result.data);
   let temp = document.querySelector(".temp");
   let cel_temp = Math.round(result.data.temperature.current);
   temp.innerHTML = `${cel_temp}°C`;
@@ -129,18 +127,15 @@ function searchIt(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(showTopResults);
 }
-let city = document.querySelector("#city_search");
-console.log(city.innerHTML)
-searchIt("paris");
+searchIt("Ibadan");
 
-// function handleSubmit(event) {
-//     event.preventDefault();
-//     let city = document.querySelector("#city_search");
-//     console.log(city)
-//     searchIt(city.value);
-// }
-// let search_form = document.querySelector("#search");
-// search_form.addEventListener("submit", handleSubmit);
+function handleSubmit(event) {
+    event.preventDefault();
+    let city = document.querySelector("#city_search");
+    searchIt(city.value);
+}
+let search_form = document.querySelector("#search");
+search_form.addEventListener("click", handleSubmit);
 
 
 // forecast
