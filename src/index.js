@@ -35,7 +35,7 @@ function showTopResults(result) {
 //   console.log(result.data);
   let temp = document.querySelector(".temp");
   let cel_temp = Math.round(result.data.temperature.current);
-  temp.innerHTML = cel_temp;
+  temp.innerHTML = `${cel_temp}°C`;
 
   // icon
   let img_icon = document.querySelector("#icon");
@@ -61,6 +61,39 @@ function showTopResults(result) {
   speed.innerHTML = `${result.data.wind.speed} mph`;
 
   getForecast(result.data.coordinates);
+
+  let description = result.data.condition.description;
+  let description1 = document.querySelector(".content");
+  description1.innerHTML = `${result.data.condition.description}`;
+
+  if (description == "Clear sky") {
+    console.log(cel_temp);
+    let bodyCont = document.querySelector("body");
+    bodyCont.style.backgroundImage =
+      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), https://wallpaperset.com/w/full/a/2/1/483779.jpg')";
+  } 
+  else if (description == "Few clouds") {
+    console.log(cel_temp);
+    let bodyCont = document.querySelector("body");
+    bodyCont.style.backgroundImage =
+      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('')";
+  } else if (cel_temp >= 8 && cel_temp <= 25) {
+    console.log(cel_temp);
+    let bodyCont = document.querySelector("body");
+    bodyCont.style.backgroundImage =
+      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
+  } else if (cel_temp >= 8 && cel_temp <= 25) {
+    console.log(cel_temp);
+    let bodyCont = document.querySelector("body");
+    bodyCont.style.backgroundImage =
+      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
+  } else if (cel_temp >= 8 && cel_temp <= 25) {
+    console.log(cel_temp);
+    let bodyCont = document.querySelector("body");
+    bodyCont.style.backgroundImage =
+      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
+  }
+
 }
 
 // show forecasts
@@ -75,7 +108,9 @@ function searchIt(city) {
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
   axios.get(apiUrl).then(showTopResults);
 }
-searchIt("Paris");
+let city = document.querySelector("#city_search");
+console.log(city.innerHTML)
+searchIt("paris");
 
 // function handleSubmit(event) {
 //     event.preventDefault();

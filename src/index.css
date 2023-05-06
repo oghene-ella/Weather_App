@@ -5,7 +5,7 @@ body{
     font-family: 'Satisfy', cursive;
     color:rgb(255, 255, 255);
     /* background-image: linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url("https://wallpaperset.com/w/full/b/2/9/453088.jpg"); */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url("https://wallpaperset.com/w/full/9/4/a/220858.jpg");
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url("https://wallpaperset.com/w/full/a/2/1/483779.jpg"); */
 }
 .container {
     margin:40px auto;
@@ -47,7 +47,7 @@ body{
     height: 100%;
     margin: 0 auto;
 }
-.weather-app .row .weather_status p{
+.weather-app .row .weather_status .temp{
     display: inline;
     /* border: 1px solid black; */
     font-size:45px;
@@ -56,6 +56,11 @@ body{
 .weather-app .row .weather_status img{
     width: 45px;
     padding-bottom: 35px;
+}
+.weather-app .row .weather_status .content{
+    margin: 0;
+    padding: 0;
+    text-transform: capitalize;
 }
 .weather-app #content .time_status {
     /* border: 1px solid rgb(9, 101, 239); */
