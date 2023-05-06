@@ -66,33 +66,54 @@ function showTopResults(result) {
   let description1 = document.querySelector(".content");
   description1.innerHTML = `${result.data.condition.description}`;
 
-  if (description == "Clear sky") {
-    console.log(cel_temp);
-    let bodyCont = document.querySelector("body");
-    bodyCont.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), https://wallpaperset.com/w/full/a/2/1/483779.jpg')";
-  } 
-  else if (description == "Few clouds") {
-    console.log(cel_temp);
-    let bodyCont = document.querySelector("body");
-    bodyCont.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('')";
-  } else if (cel_temp >= 8 && cel_temp <= 25) {
-    console.log(cel_temp);
-    let bodyCont = document.querySelector("body");
-    bodyCont.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
-  } else if (cel_temp >= 8 && cel_temp <= 25) {
-    console.log(cel_temp);
-    let bodyCont = document.querySelector("body");
-    bodyCont.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
-  } else if (cel_temp >= 8 && cel_temp <= 25) {
-    console.log(cel_temp);
-    let bodyCont = document.querySelector("body");
-    bodyCont.style.backgroundImage =
-      "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
-  }
+    if (description == "Clear sky") {
+      console.log(cel_temp);
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), https://wallpaperset.com/w/full/9/4/a/220858.jpg')";
+    } else if (
+      description == "Few clouds" ||
+      description == "overcast clouds"
+    ) {
+      console.log(cel_temp);
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/8/4/e/189140.jpg')";
+    } else if (description == "Scattered clouds") {
+      console.log(cel_temp);
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/0/b/0/189227.jpg')";
+    } else if (description == "Broken clouds") {;
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/c/d/0/189224.jpg')";
+    } else if (description == "Shower rain") {;
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/8/b/6/32254.jpg')";
+    } else if (description == "Rain") {;
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/b/a/f/32255.jpg')";
+    } else if (description == "Thunderstorm") {
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/2/3/7/189232.jpg')";
+    } else if (description == "Snow") {
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/e/0/4/453086.jpg')";
+    } else if (description == "Mist") {
+      let bodyCont = document.querySelector("body");
+      bodyCont.style.backgroundImage =
+        "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/f/f/c/189311.jpg')";
+    }
+    else{
+        let bodyCont = document.querySelector("body");
+        bodyCont.style.backgroundImage =
+          "linear-gradient(rgba(0, 0, 0, 0.241), rgba(0, 0, 0, 0.35)), url('https://wallpaperset.com/w/full/2/b/9/57609.jpg')";
+    }
 
 }
 
