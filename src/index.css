@@ -19,7 +19,7 @@ body{
 }
 .weather-app{
     color:#ffffff;
-    max-width: 800px;
+    max-width: 700px;
     height: fit-content;
     margin: 0 auto;
     padding: 20px;
@@ -86,7 +86,7 @@ body{
     padding:10px;
 }
 .weather-app #search #basic-addon1{
-    width: 7%;
+    max-width: 7%;
     border-radius: 10px 0px 0px 10px;
 }
 .weather-app #search #basic-addon1,
@@ -172,4 +172,113 @@ body{
 }
 .weather-app #forecast #items .weather-min{
     font-size: 25px;
+}
+
+.footer a {
+    display: block;
+    margin: 0 auto;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .weather-app {
+        max-width: 99em;
+    }
+    .weather-app .row .weather_status .temp {
+        font-size: 35px;
+    }
+    
+    .weather-app .row .weather_status img {
+        width: 30px;
+    }
+    
+    .weather-app #content .time_status p {
+        font-size: 16px;
+    }
+
+    .weather-app #search {
+        padding: 6px;
+    }
+    
+    .weather-app #search #basic-addon1 {
+        max-width: 4%;
+        border-radius: 7px 0px 0px 7px;
+    }
+    
+    .weather-app #search #basic-addon1,
+    .weather-app #search .form-control {
+        background-color: rgb(255, 255, 255);
+        border: none;
+        padding: 5px;
+    }
+    
+    .weather-app #search #button-addon2 {
+        width: 28%;
+    }
+    .weather-app #three_col {
+        width: 100%;
+    }
+    
+    .weather-app #three_col .row #wind,
+    .weather-app #three_col .row #uv {
+        padding: 10px 5px 2px 5px;
+        margin-right: 8px;
+    }
+    
+    .weather-app #three_col .row #humidity {
+        padding: 10px 5px 2px 5px;
+    }
+    
+    .weather-app #three_col .row #humidity i,
+    .weather-app #three_col .row #wind i,
+    .weather-app #three_col .row #uv i {
+        font-size: 1em;
+    }
+    
+    .weather-app #three_col .row #uv .wind_val,
+    .weather-app #three_col .row #wind .pressure_val,
+    .weather-app #three_col .row #humidity .hum_val {
+        font-size: 18px;
+    }
+    
+    .weather-app #three_col .row #uv .wind_lab,
+    .weather-app #three_col .row #wind .pressure_lab,
+    .weather-app #three_col .row #humidity .hum_lab {
+        font-size: 14px;
+    }
+    .weather-app #forecast {
+        width: 100%;
+        max-height: 15rem;
+        margin: 10px;
+        margin: 0 auto;
+    }
+    .weather-app #forecast #items {
+        width: 19vw;
+        padding: 10px 5px;
+        margin: 5px auto;
+    }
+    
+    .weather-app #forecast #items hr {
+        border: 0.5px solid #117611;
+        width: 80%;
+        margin: 5 auto;
+    }
+
+    .weather-app #forecast #items img {
+        margin: 2px 0px;
+        padding: 3px 5px;
+        width: 37px;
+    }
+
+    .weather-app #forecast #items .weather-min {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 440px) {
+    .weather-app #forecast #items {
+            width: 23vw;
+            padding: 8px 4px;
+            margin: 3px auto;
+        }
 }

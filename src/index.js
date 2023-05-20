@@ -25,8 +25,18 @@ function formatDate(timestamp) {
       "November",
       "December",
     ];
+    let days = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
     let month = months[date.getMonth()];
-    return `Last Updated - ${real_date}th ${month}, ${year} | ${hours}:${minutes}`;
+    let day = days[date.getDay()]
+    return `Last Updated - ${day}, ${real_date}th ${month} ${year} | ${hours}:${minutes}`;
 }
 
 // show most results
@@ -159,7 +169,7 @@ function showForecast(result) {
   let forecastEl = document.querySelector("#forecast");
   let forecastHtml = `<section class="row" id="forecast">`;
   daily_forecast.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index > 0 && index < 6) {
       forecastHtml += `
         <div class="col-2" id="items">
             <div class="weather-forecast-date">
