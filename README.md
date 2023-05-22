@@ -5,3 +5,6 @@
 <br/>
 <p> Here is the result of my Weather App✨</p>
 <img src="./src/weather-snippet.png">
+
+Technology Used
+- HTML5 | CSS3 | Javascript | API [Axios] | Bootstrap | Git & Github | Netlify
